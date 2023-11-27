@@ -22,4 +22,14 @@ class GBMConcreteSurface : public SurfaceInterface {
 		}
 };
 
+GBMConcreteSurface* create_surface(){
+	GBMConcreteSurface *surface = new GBMConcreteSurface(1920,1080);
+    return surface;
+}
+
+void destroy_surface(GBMConcreteSurface* surface)
+{
+    delete surface;
+}
+
 #endif /*  _GBM_CONCRETE_SURFACE_HPP_ */

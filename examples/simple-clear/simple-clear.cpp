@@ -1,8 +1,13 @@
 #include <iostream>
-#include "SurfaceInterface.cpp"
+#include "SurfaceInterface.hpp"
 
-int simple_clear(SurfaceInterface& surface ) {
+/* Function prototypes for surface management provided by concrete classes */
+SurfaceInterface* create_surface(void);
+void destroy_surface(SurfaceInterface*);
+
+int main() {
 	int status = 0;
+    SurfaceInterface* surface = create_surface();
 
 	status = surface.initialize_graphics();
 	if (!status){
@@ -16,9 +21,8 @@ int simple_clear(SurfaceInterface& surface ) {
 	glEnable(GL_DEPTH_TEST);
 	glDisable(GL_BLEND);
 
+    /* Swap framebuffers to move on to next frame */
 	surface.swap_buffers();
-
-
 
 	return status;
 }

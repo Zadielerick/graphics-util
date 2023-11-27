@@ -5,4 +5,12 @@ project(
   VERSION 0.1
   LANGUAGES CXX)
 
-add_subdirectory(src)
+# Default SURFACE_TYPE is GLFW
+# Other supported SURFACE_TYPES:
+#   - GBM
+if(NOT SURFACE_TYPE)
+    set(SURFACE_TYPE GLFW)
+endif()
+
+# Examples dirctory
+add_subdirectory(examples)
