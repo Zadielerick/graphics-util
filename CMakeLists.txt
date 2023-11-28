@@ -12,5 +12,8 @@ if(NOT SURFACE_TYPE)
     set(SURFACE_TYPE GLFW)
 endif()
 
-# Examples dirctory
+# Library directory
+add_subdirectory(lib)
+
+# Examples directory
 add_subdirectory(examples)
